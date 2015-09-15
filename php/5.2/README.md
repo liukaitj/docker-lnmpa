@@ -35,13 +35,13 @@ TODO:
 Get the docker image by running the following commands:
 
 ```bash
-docker pull tommylau/php-5.2
+docker pull liukaitj/php52
 ```
 
 Start an instance:
 
 ```bash
-docker run --name php -v /path/to/web:/var/www/html -d tommylau/php-5.2
+docker run --name php -v /path/to/web:/var/www/html -d liukaitj/php52
 ```
 
 This will start an instance, and you are ready to go.
@@ -51,7 +51,7 @@ This will start an instance, and you are ready to go.
 To use this image linking with MySQL, you have to have a running MySQL instance, more information about MySQL docker image, please refer to [tommylau/mysql](https://registry.hub.docker.com/u/tommylau/mysql/). Suppose you have a MySQL instance named **mysql5.6_server**, we can link it in our php instance with the name **mysql** like this:
 
 ```bash
-docker run --name php -v /path/to/web:/var/www/html --link mysql5.6_server:mysql -d tommylau/php-5.2
+docker run --name php -v /path/to/web:/var/www/html --link mysql5.6_server:mysql -d liukaitj/php52
 ```
 
 Then in the instance, you can use the hostname `mysql` to connect to the database.
