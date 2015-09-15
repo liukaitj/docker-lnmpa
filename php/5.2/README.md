@@ -22,7 +22,7 @@ Enabled:
 
 Other:
 
-- Set php timezone to **Etc/UTC**
+- Set php timezone to **PRC**
 
 TODO:
 
