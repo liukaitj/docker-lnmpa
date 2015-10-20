@@ -78,6 +78,10 @@ COPY php-fpm.conf /usr/local/etc/php/
 # Setup timezone to PRC and fix extension path
 RUN cat /usr/src/php/php.ini-recommended | sed 's/^;\(date.timezone.*\)/\1 \"PRC\"/' > /usr/local/etc/php/php.ini \
 	&& sed -i 's/\(extension_dir = \)\"\.\/\"/\1\"\/usr\/local\/lib\/php\/extensions\/no-debug-non-zts-20060613\/\"/' /usr/local/etc/php/php.ini
+# Other settings
+RUN echo 'upload_max_filesize = 20M' >> /usr/local/etc/php/php.ini
+RUN echo 'post_max_size = 20M' >> /usr/local/etc/php/php.ini
+RUN echo 'max_execution_time = 0' >> /usr/local/etc/php/php.ini
 
 WORKDIR /var/www
 
